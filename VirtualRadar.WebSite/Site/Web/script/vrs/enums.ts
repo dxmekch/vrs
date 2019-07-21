@@ -260,6 +260,7 @@ namespace VRS
         None:                       'none',
         AirframesDotOrg:            'airframes.org',
         AirlinersDotNet:            'airliners.net',
+        JetphotosDotCom:            'jetphotos.com',
         AirportDataDotCom:          'airport-data.com',
         StandingDataMaintenance:    'sdm'
     };
