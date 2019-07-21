@@ -154,6 +154,15 @@ namespace VRS
             target:             'airframes'
         }),
         new VRS.LinkRenderHandler({
+            linkSite:           VRS.LinkSite.JetphotosDotOrg,
+            displayOrder:       400,
+            canLinkAircraft:    function(aircraft) { return aircraft && !!aircraft.registration.val; },
+            hasChanged:         function(aircraft) { return aircraft.registration.chg; },
+            title:              'www.jetphotos.com',
+            buildUrl:           function(aircraft) { return 'https://www.jetphotos.com/registration/' + VRS.stringUtility.htmlEscape(aircraft.formatRegistration(true)); },
+            target:             'jetphotos'
+        }),
+        new VRS.LinkRenderHandler({
             linkSite:           VRS.LinkSite.StandingDataMaintenance,
             displayOrder:       -1,
             canLinkAircraft:    function(aircraft) { return (!VRS.serverConfig || VRS.serverConfig.routeSubmissionEnabled()) && aircraft && !!aircraft.callsign.val && aircraft.canSubmitRoute(); },
